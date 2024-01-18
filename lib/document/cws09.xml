@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scrinfo _formposition="360:740" xmlver="1" scrid="cws09" control="static,button,image" scrname="cws09">
+    <form id="form" style="position:relative;width:360px;height:740px;" taborders="btn_1">
+        <static id="stc_1" style="position:relative;left:0px;top:0px;width:100.00000%;" singleline="true" stylecolor="color:{0?RGB(255, 255, 255)};">
+            <multi_lang><![CDATA[{"caption":{"en":"ssss","ko":"ssss","vi":"ssss"}}]]></multi_lang>
+        </static>
+        <button id="btn_1" style="position:relative;left:12px;top:68px;width:100px;height:54px;left:0px;top:0px;width:27.77778%;text-align:center;">
+            <multi_lang><![CDATA[{"caption":{"en":"testBtn","ko":"testBtn","vi":"testBtn"}}]]></multi_lang>
+        </button>
+        <image id="img_1" style="position:relative;height:150px;width:100.00000%;" stylecolor="background-color:{209};border-color:{209};"/>
+    </form>
+</scrinfo>
+
