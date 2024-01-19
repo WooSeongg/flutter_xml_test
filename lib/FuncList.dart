@@ -15,9 +15,11 @@ enum FuncList{
   //동일한 이름의 enum을 반환함
   factory FuncList.getByCode(String stringName){
     //첫글자 소문자로 변환
-    var stringName2 =  stringName.substring(0, 1).toLowerCase() + stringName.substring(1);
+    var lowerCaseName =  stringName.substring(0, 1).toLowerCase() + stringName.substring(1);
 
-    return FuncList.values.firstWhere((value) => value.name == stringName2,
+
+
+    return FuncList.values.firstWhere((value) => value.name == lowerCaseName,
         orElse: () => FuncList.undefined);
   }
 }

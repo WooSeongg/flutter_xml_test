@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 // 컨트롤의 최상위 태그인 form
-class FormPage extends StatelessWidget{
+class FormControl extends StatelessWidget{
 
   //생성자
-  FormPage({
+  FormControl({
     super.key,
     this.onLoadingComplete,
     this.child,

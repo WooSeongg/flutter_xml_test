@@ -40,8 +40,6 @@ Future<List> getJSData(List<String> tagList) async{
         RegExp propertiesPattern = RegExp(r'(\w+)\.(\w+)\(([^)]*)\)');
         Iterable<Match> propMatches = functionCallPattern.allMatches(callBackFuncFullString);
 
-
-
         for (Match match in funcMatches) {
           String? objectName = match.group(1);  // 객체 이름
           String? funcName = match.group(2);    // 함수 이름
@@ -67,7 +65,7 @@ Future<List> getJSData(List<String> tagList) async{
       }
 
       content[tag] = {
-        //Button, Form 등  삭제?
+        //Button, Form 등,  삭제?
         'tagType': tagType,
         //btn_1 등
         'tagId': tag,
