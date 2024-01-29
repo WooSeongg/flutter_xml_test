@@ -12,22 +12,31 @@ enum FuncList{
   ///존재하지 않는 함수
   undefined;
 
-  //동일한 이름의 enum을 반환함
+  //String과 동일한 이름의 enum을 반환함
   factory FuncList.getByCode(String stringName){
     //첫글자 소문자로 변환
     var lowerCaseName =  stringName.substring(0, 1).toLowerCase() + stringName.substring(1);
-
-
 
     return FuncList.values.firstWhere((value) => value.name == lowerCaseName,
         orElse: () => FuncList.undefined);
   }
 }
 
-///콜백함수
+///콜백함수 정의
 enum CallFuncList{
   ///최초 실행 이벤트
-  OnFormInit,
+  onFormInit,
   ///버튼 클릭 이벤트
-  OnClick
+  onClick,
+  ///존재하지 않는 함수
+  undefined;
+
+  //String과 동일한 이름의 enum을 반환함
+  factory CallFuncList.getByCode(String stringName){
+    //첫글자 소문자로 변환
+    var lowerCaseName =  stringName.substring(0, 1).toLowerCase() + stringName.substring(1);
+
+    return CallFuncList.values.firstWhere((value) => value.name == lowerCaseName,
+        orElse: () => CallFuncList.undefined);
+  }
 }

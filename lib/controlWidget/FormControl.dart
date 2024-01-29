@@ -2,17 +2,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'BaseControl.dart';
+
 // 컨트롤의 최상위 태그인 form
-class FormControl extends StatelessWidget{
+class FormControl extends BaseControl{
 
   //생성자
   FormControl({
-    super.key,
+    required super.id,
+    required super.name,
     this.onLoadingComplete,
-    this.child,
-    this.tageName,
+    this.children,
+    this.tagName,
     this.objData,
-    this.backgroundColor = Colors.white
+    this.backgroundColor = Colors.white,
   });
 
   //****************//
@@ -26,10 +29,10 @@ class FormControl extends StatelessWidget{
   //*** 주요 속성 ***//
   //***************//
   ///폼에 들어갈 하위위젯
-  final Widget? child;
+  final List<Widget>? children;
   ///호출한 페이지의 이름,
   //어떤 페이지로부터 호출되었는지 알 수 있음
-  final String? tageName;
+  final String? tagName;
   ///호출한 페이지로부터 전달받은 데이터
   final Map? objData;
 
@@ -48,15 +51,18 @@ class FormControl extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    //위젯 반환 시점에 최초 한번만 실행되어야 함
+    //위젯 반환 시점에 최초 한번만 실행되는 함수
     if(onLoadingComplete != null && isFirstLaunch){
       isFirstLaunch = false;
-      onLoadingComplete!(tageName, objData);
+      onLoadingComplete!(tagName, objData);
     }
 
     return Container(
+      height: 200,
       color: backgroundColor,
-      child: child
+      child: Column( //CSS 값에 따라 Column 또는 Row로 변경되어야 함
+        children: children ?? [SizedBox()]
+      )
     );
   }
 
